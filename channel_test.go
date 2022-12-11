@@ -5,7 +5,7 @@ import (
 	"sync"
 	"testing"
 
-	"github.com/SierraSoftworks/multicast/v2"
+	"github.com/shynome/multicast/v2"
 	. "github.com/smartystreets/goconvey/convey"
 )
 

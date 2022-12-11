@@ -4,7 +4,7 @@ import (
 	"fmt"
 	"sync"
 
-	"github.com/SierraSoftworks/multicast/v2"
+	"github.com/shynome/multicast/v2"
 )
 
 func ExampleReadme() {
