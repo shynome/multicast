@@ -19,20 +19,20 @@ and guaranteeing delivery to all registered listeners when a message is publishe
 
 ```go
 import (
-    "fmt"
+	"fmt"
 
-    "github.com/SierraSoftworks/multicast"
+	"github.com/shynome/multicast/v2"
 )
 
 func main() {
-    c := multicast.New()
+	c := multicast.New[any]()
 
 	go func() {
 		l := c.Listen()
 		for msg := range l.C {
 			fmt.Printf("Listener 1: %s\n", msg)
 		}
-        fmt.Println("Listener 1 Closed")
+		fmt.Println("Listener 1 Closed")
 	}()
 
 	go func() {
@@ -40,7 +40,7 @@ func main() {
 		for msg := range l.C {
 			fmt.Printf("Listener 2: %s\n", msg)
 		}
-        fmt.Println("Listener 2 Closed")
+		fmt.Println("Listener 2 Closed")
 	}()
 
 	c.C <- "Hello World!"
